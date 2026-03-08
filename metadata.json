@@ -1,0 +1,7 @@
+{
+  "name": "Meu CFO",
+  "description": "Seu assistente financeiro proativo e pessoal, focado em organização e metas realistas para o contexto brasileiro.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
