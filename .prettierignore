@@ -1,0 +1,7 @@
+dist
+coverage
+node_modules
+
+# Prosa e protótipo de referência — não são código-fonte do projeto
+docs/
+README.md
