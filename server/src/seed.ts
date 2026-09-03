@@ -18,7 +18,7 @@ if (!jaTemRecorrentes || jaTemRecorrentes.n === 0) {
      VALUES (@dia, @descricao, @valor, @categoria, @tipo)`,
   )
   transacao(() => {
-    for (const r of RECORRENTES) inserirRecorrente.run(r as unknown as Record<string, string | number>)
+    for (const r of RECORRENTES) inserirRecorrente.run({ ...r })
   })
   console.log(`Semeados ${RECORRENTES.length} itens_recorrentes.`)
 } else {

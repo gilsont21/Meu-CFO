@@ -67,12 +67,12 @@ export function inserir(nova: NovaTransacao): Transacao {
     recorrente: nova.recorrente ? 1 : 0,
     origem: nova.origem ?? 'manual',
   }
-  // node:sqlite exige Record<string, SQLInputValue>; LinhaTransacao não tem índice de
-  // assinatura, mas seus campos (string/number) já são valores válidos para bind.
+  // node:sqlite exige Record<string, SQLInputValue>; um objeto literal (via spread)
+  // satisfaz isso sem precisar de índice de assinatura em LinhaTransacao nem de cast.
   db.prepare(
     `INSERT INTO transacoes (id, data, descricao, valor, categoria, recorrente, origem)
      VALUES (@id, @data, @descricao, @valor, @categoria, @recorrente, @origem)`,
-  ).run(linha as unknown as Record<string, string | number>)
+  ).run({ ...linha })
   return paraDominio(linha)
 }
 

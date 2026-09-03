@@ -35,9 +35,8 @@ const inserirCategoria = db.prepare(
 )
 transacao(() => {
   for (const categoria of Object.values(CATEGORIAS)) {
-    // node:sqlite exige Record<string, SQLInputValue> — nossos tipos de domínio não têm
-    // índice de assinatura, então o cast é só para satisfazer o TS; os campos já são
-    // string/number, valores válidos para bind.
-    inserirCategoria.run(categoria as unknown as Record<string, string>)
+    // node:sqlite exige Record<string, SQLInputValue>; um objeto literal (via spread)
+    // satisfaz isso sem precisar de índice de assinatura em Categoria nem de cast.
+    inserirCategoria.run({ ...categoria })
   }
 })
