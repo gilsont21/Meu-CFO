@@ -11,7 +11,10 @@ ritmo é recalculado aqui.
 ## Stack
 
 - Express 5
-- `better-sqlite3` (síncrono — mais simples para este volume de dados)
+- `node:sqlite` (`DatabaseSync`) — o driver SQLite embutido no próprio Node.js desde a v22,
+  também síncrono. Sem compilação nativa: nenhum pacote de banco a instalar, nenhum binário a
+  compilar em cada plataforma — era esse o motivo da troca (ver **Requisito de versão do Node**
+  abaixo).
 - `tsx` para rodar TypeScript direto, sem etapa de build separada (inclusive importando
   `../src/domain` e `../src/data` do projeto raiz)
 - `@anthropic-ai/sdk` para o chat, chamado só do servidor (ADR 0002)
@@ -27,6 +30,13 @@ Como ainda não existe uma entidade `account` com saldo, `saldoHoje` é informad
 `GET /api/resumo` e `POST /api/chat` (query param / body). Isso é uma simplificação deliberada
 deste MVP — quando o servidor caseiro ganhar uma tela de configuração, dá para trocar por uma
 tabela `config` com o saldo inicial da conta.
+
+## Requisito de versão do Node
+
+**Node.js 22.10 ou superior** (checado via `engines` no `package.json`) — é a versão mínima
+que traz o `node:sqlite` estável com as opções usadas aqui (`enableForeignKeyConstraints`).
+Rode `node --version` antes de instalar; no Termux, `pkg install nodejs-lts` já traz uma
+versão compatível.
 
 ## Rodando localmente
 
@@ -52,32 +62,6 @@ npm start
 
 O servidor serve a API e os arquivos de `../dist` na mesma porta — é o que permite expor uma
 porta só a partir do celular.
-
-### Compilação nativa do `better-sqlite3`
-
-`better-sqlite3` compila um binário nativo na instalação (`node-gyp rebuild`) — não existe
-pacote pronto para toda plataforma/arquitetura, então isso é normal e esperado. No Windows isso
-exige as **Visual Studio Build Tools** com o workload "Desktop development with C++" (feito
-neste PC via `winget install Microsoft.VisualStudio.2022.BuildTools ...`, ver histórico do
-projeto). No Termux (Android/ARM), o passo a passo é:
-
-```bash
-pkg update
-pkg install nodejs-lts build-essential python   # node/npm + toolchain de compilação (node-gyp precisa de make, g++ e python)
-cd server
-npm install
-```
-
-Se o `npm install` avisar `"packages have install scripts not yet covered by allowScripts"` —
-comportamento novo do npm que bloqueia scripts de instalação por padrão — rode:
-
-```bash
-npm install-scripts approve better-sqlite3
-```
-
-e depois `npm rebuild better-sqlite3` se o binário não tiver sido compilado automaticamente.
-Sem isso, `npm install` roda sem erro, mas o `require('better-sqlite3')` falha ao subir o
-servidor (`npm run dev` ou `npm start`) com um erro de módulo nativo não encontrado.
 
 ## Rotas
 

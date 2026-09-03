@@ -38,10 +38,8 @@ function paraIso(ano: number, mes: number, dia: number): string {
 
 export function listarEntre(inicioIso: string, fimIso: string): Transacao[] {
   const linhas = db
-    .prepare<[string, string], LinhaTransacao>(
-      'SELECT * FROM transacoes WHERE data BETWEEN ? AND ? ORDER BY data ASC, criado_em ASC',
-    )
-    .all(inicioIso, fimIso)
+    .prepare('SELECT * FROM transacoes WHERE data BETWEEN ? AND ? ORDER BY data ASC, criado_em ASC')
+    .all(inicioIso, fimIso) as unknown as LinhaTransacao[]
   return linhas.map(paraDominio)
 }
 
@@ -69,10 +67,12 @@ export function inserir(nova: NovaTransacao): Transacao {
     recorrente: nova.recorrente ? 1 : 0,
     origem: nova.origem ?? 'manual',
   }
+  // node:sqlite exige Record<string, SQLInputValue>; LinhaTransacao não tem índice de
+  // assinatura, mas seus campos (string/number) já são valores válidos para bind.
   db.prepare(
     `INSERT INTO transacoes (id, data, descricao, valor, categoria, recorrente, origem)
      VALUES (@id, @data, @descricao, @valor, @categoria, @recorrente, @origem)`,
-  ).run(linha)
+  ).run(linha as unknown as Record<string, string | number>)
   return paraDominio(linha)
 }
 
