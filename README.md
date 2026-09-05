@@ -67,6 +67,19 @@ npm install
 npm run dev
 ```
 
+## Instalando como app (PWA)
+
+O front-end é um PWA instalável (manifest + service worker, via `vite-plugin-pwa`). Depois
+de rodar `npm run build` e subir o servidor (`server/`, que serve o `dist/` gerado):
+
+- **Desktop (Chrome/Edge)**: abra o endereço do servidor no navegador e clique no ícone de
+  instalar que aparece na barra de endereço.
+- **Android**: abra o endereço no Chrome, toque no menu (⋮) e escolha "Adicionar à tela
+  inicial".
+
+Os ícones em `public/pwa-192x192.png` e `public/pwa-512x512.png` são placeholders (as letras
+"CFO" sobre fundo escuro) — trocar por um ícone definitivo quando o visual for fechado.
+
 ## Roadmap
 
 - **v0** — protótipo de interface com dados sintéticos ✅
