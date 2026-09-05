@@ -1,0 +1,1 @@
+export { TelaVisaoGeral } from './TelaVisaoGeral'

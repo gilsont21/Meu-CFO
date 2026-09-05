@@ -11,3 +11,9 @@ npm-debug.log*
 Thumbs.db
 .vite/
 .idea/
+
+# Servidor caseiro (server/) — banco SQLite local, nunca versionado
+server/data/*.db
+server/data/*.db-journal
+server/data/*.db-wal
+server/data/*.db-shm

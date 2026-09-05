@@ -1,0 +1,1 @@
+export { TelaMetas } from './TelaMetas'

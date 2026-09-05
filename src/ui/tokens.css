@@ -1,0 +1,68 @@
+/**
+ * Tokens visuais neutros — paleta de cinza, tipografia do sistema, espaçamento
+ * e raios. Estágio de casca de navegação: cor, tipografia definitiva e
+ * espaçamentos finos vêm em uma etapa de refinamento visual posterior.
+ */
+:root {
+  color-scheme: light;
+
+  --cor-fundo: #f4f4f3;
+  --cor-superficie: #ffffff;
+  --cor-borda: #dcdcda;
+  --cor-borda-tracejada: #c7c7c5;
+  --cor-texto: #1a1a1a;
+  --cor-texto-secundario: #5c5c5c;
+  --cor-texto-terciario: #8c8c8a;
+  --cor-destaque: #1a1a1a;
+  --cor-sobre-destaque: #ffffff;
+
+  --raio-sm: 8px;
+  --raio-md: 10px;
+  --raio-lg: 14px;
+  --raio-total: 999px;
+
+  --fonte-base: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fonte-mono: ui-monospace, 'SFMono-Regular', monospace;
+
+  --espaco-1: 4px;
+  --espaco-2: 8px;
+  --espaco-3: 12px;
+  --espaco-4: 16px;
+  --espaco-5: 20px;
+  --espaco-6: 24px;
+  --espaco-7: 32px;
+
+  --rail-largura: 64px;
+  --rail-largura-expandida: 188px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-base);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}

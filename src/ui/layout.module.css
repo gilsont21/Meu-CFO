@@ -1,0 +1,54 @@
+/**
+ * Primitivos de layout reaproveitados entre telas: cartão base, grade de
+ * cartões, título de bloco e texto de placeholder (áreas ainda não ligadas a
+ * dados reais).
+ */
+.card {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  padding: var(--espaco-5);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: var(--espaco-3);
+  margin-bottom: var(--espaco-7);
+}
+
+.blocoTitulo {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 var(--espaco-3);
+}
+
+.placeholder {
+  color: var(--cor-texto-terciario);
+  font-size: 13px;
+  font-style: italic;
+  margin: 0;
+}
+
+.link {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--cor-texto);
+  margin-top: var(--espaco-2);
+}
+
+.cardNovoItem {
+  border: 1px dashed var(--cor-borda-tracejada);
+  background: transparent;
+  border-radius: var(--raio-md);
+  display: grid;
+  place-items: center;
+  color: var(--cor-texto-terciario);
+  font-size: 13.5px;
+  min-height: 100px;
+}
+
+.cardNovoItem:hover {
+  border-color: var(--cor-texto-terciario);
+  color: var(--cor-texto-secundario);
+}

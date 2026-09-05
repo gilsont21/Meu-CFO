@@ -1,0 +1,1 @@
+export { TelaTransacoes } from './TelaTransacoes'

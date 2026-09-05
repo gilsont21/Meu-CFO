@@ -1,0 +1,1 @@
+export { TelaHoje } from './TelaHoje'

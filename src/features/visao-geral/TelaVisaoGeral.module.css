@@ -1,0 +1,11 @@
+.espacoGrafico {
+  height: 90px;
+  border: 1px dashed var(--cor-borda-tracejada);
+  border-radius: var(--raio-sm);
+  display: grid;
+  place-items: center;
+  color: var(--cor-texto-terciario);
+  font-size: 12.5px;
+  text-align: center;
+  padding: 0 var(--espaco-3);
+}

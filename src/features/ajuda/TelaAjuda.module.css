@@ -1,0 +1,49 @@
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--espaco-3);
+}
+
+.fechar {
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-superficie);
+  border-radius: var(--raio-sm);
+  padding: 6px 12px;
+  font-size: 12.5px;
+  color: var(--cor-texto-secundario);
+  height: fit-content;
+  white-space: nowrap;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-3);
+}
+
+.exemploRuim {
+  font-size: 13px;
+  color: var(--cor-texto-terciario);
+  margin: 0 0 var(--espaco-1);
+}
+
+.exemploBom {
+  font-size: 13px;
+  color: var(--cor-texto);
+  font-weight: 500;
+  margin: 0;
+}
+
+.passos {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-2);
+}
+
+.passoItem {
+  font-size: 13px;
+  color: var(--cor-texto-secundario);
+}

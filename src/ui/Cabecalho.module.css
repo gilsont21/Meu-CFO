@@ -1,0 +1,18 @@
+.cabecalho {
+  margin-bottom: var(--espaco-5);
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--cor-texto-terciario);
+  font-family: var(--fonte-mono);
+  margin-bottom: var(--espaco-1);
+}
+
+.titulo {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+}

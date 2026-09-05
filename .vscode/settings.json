@@ -7,8 +7,10 @@
   "editor.rulers": [100],
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
+  "includeCoAuthoredBy": false,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
+  "includeCoAuthoredBy": false,
   "search.exclude": {
     "**/node_modules": true,
     "**/dist": true

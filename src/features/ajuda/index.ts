@@ -1,0 +1,1 @@
+export { TelaAjuda } from './TelaAjuda'

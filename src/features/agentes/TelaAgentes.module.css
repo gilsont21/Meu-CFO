@@ -1,0 +1,23 @@
+.cabecalhoAgente {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--espaco-2);
+  gap: var(--espaco-2);
+}
+
+.nome {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--cor-texto-terciario);
+  font-family: var(--fonte-mono);
+}
+
+.pill {
+  font-size: 10.5px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-total);
+  padding: 2px 8px;
+  color: var(--cor-texto-secundario);
+  white-space: nowrap;
+}

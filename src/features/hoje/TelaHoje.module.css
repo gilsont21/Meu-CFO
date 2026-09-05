@@ -1,0 +1,43 @@
+.hero {
+  margin-bottom: var(--espaco-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4);
+}
+
+.rotuloHero {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--cor-texto-terciario);
+  font-family: var(--fonte-mono);
+}
+
+.frase {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.35;
+  max-width: 34ch;
+  margin: 0;
+}
+
+.espacoGrafico {
+  height: 90px;
+  border: 1px dashed var(--cor-borda-tracejada);
+  border-radius: var(--raio-sm);
+  display: grid;
+  place-items: center;
+  color: var(--cor-texto-terciario);
+  font-size: 12.5px;
+  text-align: center;
+  padding: 0 var(--espaco-3);
+}
+
+.espacoAlavanca {
+  height: 40px;
+  border: 1px dashed var(--cor-borda-tracejada);
+  border-radius: var(--raio-sm);
+  display: grid;
+  place-items: center;
+  color: var(--cor-texto-terciario);
+  font-size: 12.5px;
+}

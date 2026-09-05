@@ -1,0 +1,1 @@
+export { TelaCompromissos } from './TelaCompromissos'
