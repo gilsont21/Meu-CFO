@@ -81,3 +81,45 @@
   place-items: center;
   font-size: 14px;
 }
+
+.mensagens {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-3);
+  width: min(600px, 90%);
+  text-align: left;
+}
+
+.mensagemUsuario {
+  align-self: flex-end;
+  background: var(--cor-destaque);
+  color: var(--cor-sobre-destaque);
+  border-radius: var(--raio-lg);
+  padding: var(--espaco-2) var(--espaco-4);
+  max-width: 80%;
+}
+
+.mensagemCfo {
+  align-self: flex-start;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  padding: var(--espaco-2) var(--espaco-4);
+  max-width: 80%;
+}
+
+.digitando {
+  color: var(--cor-texto-terciario);
+  font-size: 13px;
+  margin: 0;
+}
+
+.erro {
+  color: var(--cor-erro, #b23a32);
+  font-size: 13px;
+  width: min(600px, 90%);
+  margin: 0 auto var(--espaco-2);
+}

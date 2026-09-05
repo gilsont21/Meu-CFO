@@ -1,0 +1,88 @@
+.extrato {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4);
+}
+
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+}
+
+.formulario input,
+.formulario select {
+  font: inherit;
+  padding: var(--espaco-2) var(--espaco-3);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+}
+
+.formulario button {
+  font: inherit;
+  padding: var(--espaco-2) var(--espaco-4);
+  border: none;
+  border-radius: var(--raio-sm);
+  background: var(--cor-texto);
+  color: var(--cor-fundo);
+  cursor: pointer;
+}
+
+.formulario button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.erro {
+  color: var(--cor-erro, #b23a32);
+  font-size: 13px;
+  margin: 0;
+}
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-2);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  font-size: 13.5px;
+  padding: var(--espaco-2) 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.data {
+  color: var(--cor-texto-terciario);
+  font-family: var(--fonte-mono);
+  font-size: 12px;
+}
+
+.descricao {
+  flex: 1;
+}
+
+.valor {
+  font-weight: 500;
+}
+
+.remover {
+  font: inherit;
+  font-size: 12px;
+  background: none;
+  border: none;
+  color: var(--cor-texto-terciario);
+  cursor: pointer;
+  padding: 0;
+}
+
+.remover:hover {
+  color: var(--cor-texto);
+}

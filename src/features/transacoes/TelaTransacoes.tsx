@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { TelaCompromissos } from '../compromissos'
+import { TelaExtrato } from './TelaExtrato'
 import { Cabecalho, SegmentedControl, type OpcaoSegmentada } from '../../ui'
 import layout from '../../ui/layout.module.css'
 
@@ -14,6 +15,7 @@ const SEGMENTOS: OpcaoSegmentada<SegmentoTransacoes>[] = [
 ]
 
 function ConteudoSegmento({ segmento }: { segmento: SegmentoTransacoes }) {
+  if (segmento === 'extrato') return <TelaExtrato />
   if (segmento === 'compromissos') return <TelaCompromissos />
   const rotulo = SEGMENTOS.find((s) => s.id === segmento)?.rotulo ?? ''
   return <p className={layout.placeholder}>conteúdo de “{rotulo}”</p>
